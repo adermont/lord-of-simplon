@@ -22,7 +22,6 @@ public class Player
 
     public Player(IHeroe pHeroe, String pName, int pNbVictories)
     {
-        mHeroe = pHeroe;
         mName = pName;
         mNbVictories = pNbVictories;
         mEnergy = MAX_ENERGY;
