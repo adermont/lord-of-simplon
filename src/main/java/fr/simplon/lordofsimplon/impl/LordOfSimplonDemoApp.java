@@ -66,7 +66,7 @@ public class LordOfSimplonDemoApp
     public static void main(String[] args) throws IOException
     {
         // Chargement du jeu
-        LordOfSimplonDemoApp app = new LordOfSimplonDemoApp();
+        LordOfSimplonDemoApp app = null;
 
         // Sélection de 2 joueurs au pif pour faire un combat
         Player p1 = app.getPlayers().get(new Random().nextInt(app.getNbPlayers()));
