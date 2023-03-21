@@ -10,7 +10,6 @@ import fr.simplon.lordofsimplon.api.player.Player;
 
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * Permet de faire des interactions entre l'avatar dans le jeu et l'utilisateur physique :)

@@ -1,6 +1,5 @@
 package fr.simplon.lordofsimplon.api.fight;
 
-import fr.simplon.lordofsimplon.api.fight.Hit;
 import fr.simplon.lordofsimplon.api.player.Player;
 import fr.simplon.lordofsimplon.impl.fight.Fight;
 

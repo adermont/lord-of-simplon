@@ -1,8 +1,8 @@
 package fr.simplon.lordofsimplon.api.fight;
 
-import fr.simplon.lordofsimplon.impl.fight.Fight;
-import fr.simplon.lordofsimplon.api.player.Player;
 import fr.simplon.lordofsimplon.api.heroes.MagicType;
+import fr.simplon.lordofsimplon.api.player.Player;
+import fr.simplon.lordofsimplon.impl.fight.Fight;
 
 /**
  * Evènements diffusés pendant un combat.
@@ -14,7 +14,7 @@ public interface IFightListener
      *
      * @param pFight Le combat qui vient d'être lancé.
      */
-    default void onFightStarted(Fight pFight)
+    default void onFightStarted(IFight pFight)
     {
         System.out.printf("==================== NOUVEAU COMBAT ========================%n");
         Player player1 = pFight.getPlayers().get(0);

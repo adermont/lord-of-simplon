@@ -15,7 +15,7 @@ import java.util.*;
 /**
  * Charge les caractéristiques du jeu à partir d'un fichier de propriétés.
  */
-public class LordOfSimplonPropertiesGameLoader implements ILordOfSimplonGameLoader
+public class LordOfSimplonPropertiesGameLoader extends LordOfSimplonDefaultGameLoader implements ILordOfSimplonGameLoader
 {
     // Heroes ========================================================
     public static final String P_MAGIC_POINTS   = ".points";
@@ -36,7 +36,7 @@ public class LordOfSimplonPropertiesGameLoader implements ILordOfSimplonGameLoad
     private final Properties   mHeroesProperties;
     private final Properties   mPlayersProperties;
     private final List<IHeroe> mHeroes;
-    private final List<Player> mPlayers;
+    protected final List<Player> mPlayers;
 
     /**
      * Constructeur.
