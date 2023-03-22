@@ -62,3 +62,7 @@ l'expérience de chaque joueur est sauvegardée dans un fichier.
 - Step 3 : sauvegarde des scores en base de données
 
 - Step 4 : backend-ification
+
+- Step 5 : maquette frontend HTML
+
+- Step 6 : put all together !
