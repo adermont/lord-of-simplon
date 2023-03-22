@@ -9,7 +9,6 @@ module fr.simplon.lordofsimplon {
     exports fr.simplon.lordofsimplon.api.player;
     exports fr.simplon.lordofsimplon.api.persist;
     exports fr.simplon.lordofsimplon.api.heroes;
-    exports fr.simplon.lordofsimplon;
 
     requires fr.simplon.www;
     requires java.sql;

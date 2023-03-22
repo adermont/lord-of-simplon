@@ -1,0 +1,195 @@
+html {
+    background-color: #161c2d;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+body {
+    background-color: #161c2d;
+    background-size: 100%;
+    color: #ffffff;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: xxx-large;
+}
+
+.heroe-header-line {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    color: white;
+    background-color: #73Cfe0;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 50px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* -----------------------------------------------------------*/
+.heroe-selection-line {
+    display: flex;
+    width: 600px;
+    margin: auto;
+}
+
+.radio-player {
+    display: flex;
+    float: left;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.heroe-card {
+    display: flex;
+    float: left;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+    height: 80px;
+}
+
+.heroe-card-text {
+    margin: auto;
+}
+
+.heroe-card-img {
+    float: left;
+    display: block;
+    margin-right: 10px;
+}
+
+.heroe-card img {
+    width: 80px;
+    height: 80px;
+}
+
+.heroe-card h1 {
+    float: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: large;
+}
+
+.heroe-description {
+    float: none;
+    margin: 0;
+    padding: 0;
+    font-size: x-small;
+}
+
+/* ------------------------------------------------------------------
+   correction-fight.html
+   ------------------------------------------------------------------
+*/
+.three-columns-container {
+    display: flex;
+    width: 950px;
+    margin: auto;
+}
+
+.column {
+    width: 400px;
+}
+
+.center-column {
+    width: 150px;
+}
+
+.card {
+    padding: 10px;
+    text-align: left;
+    color: black;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+.card h2 {
+    margin: 0 4px 0;
+}
+
+.card img {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.card p {
+    margin: 0 4px 0;
+}
+
+.versus-text {
+    text-align: center;
+}
+
+.card-text {
+    float: left;
+    text-align: left;
+}
+
+.current-player {
+    border: solid yellow 7px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.sortilege-player {
+    width: 400px;
+    text-align: center;
+    margin: 7px 0;
+}
+
+.sortilege-actif {
+    color: darksalmon;
+    font-weight: bold;
+}
+
+.sortilege-actif-nbtours {
+    color: darksalmon;
+    font-size: 8pt;
+}
+
+.sortilege-inactif {
+    color: white;
+    font-size: 8pt;
+}
+
+.score {
+    float: right;
+    font-size: 54pt;
+    font-weight: bolder;
+    color: lightgrey;
+}
+
+/* ------------------------ */
+#header-coups {
+    font-size: 8pt;
+    margin: 30px auto 5px;
+}
+
+#liste-coups {
+    height: 300px;
+}
