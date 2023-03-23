@@ -1,98 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Lord of Simplon</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
-    
-<script>
-  function redirectToFight() {
-      window.location.href = "fight.html";
-  }
-</script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--Pour avoir la foctionnalité qui permet de changer de page en cliquant sur le bouton démarrer-->
+    <script>
+      function redirectToFight() {
+        window.location.href = "fight.html";
+      }
+    </script>
+  </head>
+  <body class="indexBody">
+    <h1>Lord of Simplon</h1>
 
-</head>
-<body>
-    
-      
-<H1>Lord of Simplon</H1>
+    <!-- Ligne d'entête -->
 
-<!-- Ligne d'entête -->
+    <div class="heroe-header-line">
+      <div>
+        <p><b>Joueur 1 </b></p>
+      </div>
+      <div>
+        <button
+          id="demarrer"
+          class="button"
+          type="button"
+          onclick="redirectToFight()"
+        >
+          <b>Démarrer</b>
+        </button>
+      </div>
+      <div>
+        <p><b>Joueur 2 </b></p>
+      </div>
+    </div>
 
+    <!-- Ligne de sélection d'un héros : de part et d'autre de la card du héros on doit mettre des cases à cocher -->
+    <div class="heroe-selection-line">
+      <!-- TODO : Case à cocher -->
 
-
-
-   <div class="heroe-header-line">
-    <div> <p><b>Joueur 1 </b></p></div>
-    <div> <button id="demarrer" class="button" type="button" onclick="redirectToFight()"><b>Démarrer</b></button> </div>  
-    <div> <p><b>Joueur 2 </b></p></div>
-</div>
-
-
-
-
-<!-- Ligne de sélection d'un héros : de part et d'autre de la card du héros on doit mettre des cases à cocher -->
-<div class="heroe-selection-line">
-
-    <!-- TODO : Case à cocher -->
-
-       <input type="radio" name="left" checked>  
-    <div class="heroe-card">
+      <input type="radio" name="left" checked />
+      <div class="heroe-card">
         <div class="heroe-card-img">
-            <img src="img/Paladin.png" alt="Log du paladin">
+          <img src="img/Paladin.png" alt="Log du paladin" />
         </div>
         <div class="heroe-card-text">
           <h1>Paladin</h1>
           <p class="heroe-description">
-            Gare à celui qui se trouvera sur le chemin de son épée prodigieuse, 
-            le Paladin est un héros qui livre des combats sans merci !</p>
+            Gare à celui qui se trouvera sur le chemin de son épée prodigieuse,
+            le Paladin est un héros qui livre des combats sans merci !
+          </p>
         </div>
-        
+      </div>
+      <input type="radio" name="right" checked />
     </div>
-    <input type="radio" name="right" checked>
-</div>
-    
-    
 
     <!-- TODO : Case à cocher -->
 
-
-
-<!-- Ligne de sélection du héros n°2 -->
-<div class="heroe-selection-line">
-    <input type="radio" name="left">
-    <div class="heroe-card">
+    <!-- Ligne de sélection du héros n°2 -->
+    <div class="heroe-selection-line">
+      <input type="radio" name="left" />
+      <div class="heroe-card">
         <div class="heroe-card-img">
-            <img src="img/Shifumy.png" alt="Log du Shifumy">
+          <img src="img/Shifumy.png" alt="Log du Shifumy" />
         </div>
         <div class="heroe-card-text">
-            <h1>Shifumy</h1>
-            <p class="heroe-description">Son pouvoir généranté en a usé plus d'un !
-            </p>
+          <h1>Shifumy</h1>
+          <p class="heroe-description">
+            Son pouvoir généranté en a usé plus d'un !
+          </p>
         </div>
+      </div>
+      <input type="radio" name="right" />
     </div>
-    <input type="radio" name="right">
-</div>
 
-<!-- Ligne de sélection du héros n°3 -->
-<div class="heroe-selection-line">
-    <input type="radio" name="left">
-    <div class="heroe-card">
+    <!-- Ligne de sélection du héros n°3 -->
+    <div class="heroe-selection-line">
+      <input type="radio" name="left" />
+      <div class="heroe-card">
         <div class="heroe-card-img">
-            <img src="img/Rashuk.png" alt="Log du Rashuk">
+          <img src="img/Rashuk.png" alt="Log du Rashuk" />
         </div>
         <div class="heroe-card-text">
-            <h1>Rashuk</h1>
-            <p class="heroe-description">C'est un personnage dessiné sur un coin de table et ce de là qui lui vient le nom de sa meilleur attaque !
-            </p>
+          <h1>Rashuk</h1>
+          <p class="heroe-description">
+            C'est un personnage dessiné sur un coin de table et ce de là qui lui
+            vient le nom de sa meilleur attaque !
+          </p>
         </div>
+      </div>
+      <input type="radio" name="right" />
     </div>
-    <input type="radio" name="right">
-</div>
-
-</body>
+  </body>
 </html>

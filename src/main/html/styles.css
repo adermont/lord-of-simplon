@@ -12,10 +12,21 @@ html {
   max-height: 100%;
 }
 
-body {
+.indexBody {
   background-color: #161c2d;
   background-image: url(img/Paladin.png);
   background-blend-mode: color-dodge;
+  background-size: 100%;
+  color: #ffffff;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.fightBody {
+  background-color: #161c2d;
+
   background-size: 100%;
   color: #ffffff;
   font-family: sans-serif;
@@ -33,6 +44,10 @@ h1 {
   font-family: "Irish Grover", cursive;
   font-size: 72px;
   color: #ffb800;
+}
+
+.fight{
+  font-size: 50px;
 }
 
 .heroe-header-line {
