@@ -1,14 +1,12 @@
 html {
-    background-color: #161c2d;
+    background-color: rgb(17, 17, 17);
     width: 100%;
     height: 100%;
     max-height: 100%;
 }
 
 body {
-    background-color: #161c2d;
-    background-size: 100%;
-    color: #ffffff;
+    background-image: "img/Paladin.png";
     font-family: sans-serif;
     width: 100%;
     height: 100%;
@@ -19,6 +17,8 @@ h1 {
     margin-top: 30px;
     text-align: center;
     font-size: xxx-large;
+    font-family: 'Irish grover' , cursive ;
+    color: #ffb800;
 }
 
 .heroe-header-line {
@@ -27,12 +27,14 @@ h1 {
     margin-right: auto;
     margin-bottom: 30px;
     text-align: center;
+    color: #ffb800;
+    justify-content: space-between;
 }
 
 .button {
     display: inline-block;
-    color: white;
-    background-color: #73Cfe0;
+    color: rgb(24, 22, 22);
+    background-color: #ffb800(187 25% 71%);
     border: none;
     border-radius: 5px;
     padding: 8px 50px;
@@ -41,7 +43,7 @@ h1 {
 }
 
 .button:hover {
-    background-color: white;
+    background-color: #ffb800;
     color: black;
 }
 
@@ -67,12 +69,13 @@ h1 {
     border-radius: 10px;
     padding: 20px;
     width: 400px;
-    margin: auto;
+    margin: 10px;
     height: 80px;
 }
 
 .heroe-card-text {
     margin: auto;
+    text-align: justify;
 }
 
 .heroe-card-img {
@@ -92,6 +95,7 @@ h1 {
     padding: 0;
     text-align: left;
     font-size: large;
+
 }
 
 .heroe-description {
@@ -99,6 +103,7 @@ h1 {
     margin: 0;
     padding: 0;
     font-size: x-small;
+    justify-content: space-between;
 }
 
 /* ------------------------------------------------------------------
