@@ -72,6 +72,16 @@ h1 {
   margin: auto;
 }
 
+.heroe-selection-line input {
+  accent-color: #C66767;
+  width: 25px;
+  height: 25px;
+  margin-top: 50px;
+  justify-content: space-around;
+ 
+
+}
+
 .radio-player {
   display: flex;
   float: left;
@@ -131,12 +141,12 @@ h1 {
 */
 .three-columns-container {
   display: flex;
-  width: 950px;
+  width: 1300px;
   margin: auto;
 }
 
 .column {
-  width: 400px;
+  width: 500px;
 }
 
 .center-column {
