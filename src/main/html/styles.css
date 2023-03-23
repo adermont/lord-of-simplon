@@ -76,6 +76,26 @@ h1 {
  
 }
 
+.heroe-selection-line input {
+  accent-color: #C66767;
+  width: 25px;
+  height: 25px;
+  margin-top: 50px;
+  justify-content: space-around;
+ 
+
+}
+
+.heroe-selection-line input {
+  accent-color: #C66767;
+  width: 25px;
+  height: 25px;
+  margin-top: 50px;
+  justify-content: space-around;
+ 
+
+}
+
 .radio-player {
   display: flex;
   float: left;
@@ -99,6 +119,9 @@ h1 {
 .heroe-card-text {
   margin: auto;
   text-align: justify;
+  font-size: 32px;
+  font-family: "bold";
+  color: black;
 }
 
 .heroe-card-img {
@@ -138,7 +161,7 @@ h1 {
 }
 
 .column {
-  width: 400px;
+  width: 500px;
 }
 
 .center-column {
