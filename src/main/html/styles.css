@@ -41,11 +41,11 @@ h1 {
   text-align: center;
 
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   color: #ffb800;
-  font-size: 32px;
+  font-size: 30px;
   font-family: "bold";
 }
 
@@ -68,24 +68,28 @@ h1 {
 /* -----------------------------------------------------------*/
 .heroe-selection-line {
   display: flex;
-  width: 600px;
+  width: 400px;
   margin: auto;
+  flex-wrap: nowrap;
+  color: #d9d9d9;
+  justify-content: center;
+ 
 }
 
 .radio-player {
   display: flex;
   float: left;
-  width: 42px;
+  width: 60px;
   margin-left: 25px;
   margin-right: 25px;
 }
 
 .heroe-card {
   display: flex;
-  float: middle;
+  float: center;
   color: black;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px;
   width: 300px;
   margin: 10px;
@@ -130,7 +134,7 @@ h1 {
 .three-columns-container {
   display: flex;
   width: 950px;
-  margin: auto;
+  margin: left;
 }
 
 .column {
