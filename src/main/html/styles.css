@@ -25,9 +25,11 @@ body {
 }
 
 h1 {
-  margin-top: 15px;
+  <h1 style="
+  height: 80px;
+  margin-bottom: 5px;
   text-align: center;
-  font-size: xxx-large;
+  font-size:larger;
   font-family: "Irish Grover", cursive;
   font-size: 72px;
   color: #ffb800;
