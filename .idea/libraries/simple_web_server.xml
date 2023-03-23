@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="simple-web-server">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/simple-web-server.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/simple-web-server.jar!/" />
+    </SOURCES>
+  </library>
+</component>
