@@ -74,7 +74,6 @@ h1 {
 .radio-player {
   display: flex;
   float: left;
-  width: 42px;
   margin-left: 25px;
   margin-right: 25px;
 }
