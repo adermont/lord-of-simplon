@@ -6,18 +6,24 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
+<body class="index">
 <H1>Lord of Simplon</H1>
 
 <!-- Ligne d'entête -->
 <div class="heroe-header-line">
-    <button id="demarrer" class="button" type="button" onclick="">Démarrer</button>
+    <div class="player-header">Joueur 1</div>
+    <div class="player-header">
+        <button id="demarrer" class="button" type="button" onclick="location.href='fight.html'">Démarrer</button>
+    </div>
+    <div class="player-header">Joueur 2</div>
 </div>
 
 <!-- Ligne de sélection d'un héros : de part et d'autre de la card du héros on doit mettre des cases à cocher -->
 <div class="heroe-selection-line">
 
-    <!-- TODO : Case à cocher -->
+    <div class="radio-player">
+        <input type="radio" name="player1" checked>
+    </div>
 
     <div class="heroe-card">
         <div class="heroe-card-img">
@@ -31,18 +37,55 @@
         </div>
     </div>
 
-    <!-- TODO : Case à cocher -->
+    <div class="radio-player">
+        <input type="radio" name="player2">
+    </div>
 
 </div>
 
 <!-- Ligne de sélection du héros n°2 -->
 <div class="heroe-selection-line">
-    <!-- TODO -->
+    <div class="radio-player">
+        <input type="radio" name="player1">
+    </div>
+
+    <div class="heroe-card">
+        <div class="heroe-card-img">
+            <img src="img/Shifumy.png" alt="Log du paladin">
+        </div>
+        <div class="heroe-card-text">
+            <h1>Shifumy</h1>
+            <p class="heroe-description">Le Shifumy est imbattable mais shhhh ! c'est un secret :)
+            </p>
+        </div>
+    </div>
+
+    <div class="radio-player">
+        <input type="radio" name="player2" checked>
+    </div>
 </div>
 
 <!-- Ligne de sélection du héros n°3 -->
 <div class="heroe-selection-line">
-    <!-- TODO -->
+    <div class="radio-player">
+        <input type="radio" name="player1">
+    </div>
+
+    <div class="heroe-card">
+        <div class="heroe-card-img">
+            <img src="img/Rashuk.png" alt="Log du paladin">
+        </div>
+        <div class="heroe-card-text">
+            <h1>Rashuk</h1>
+            <p class="heroe-description">C’est un personnage dessiné sur un coin de table et c’est de là que lui vient
+                le nom de sa meilleure attaque !
+            </p>
+        </div>
+    </div>
+
+    <div class="radio-player">
+        <input type="radio" name="player2">
+    </div>
 </div>
 
 </body>

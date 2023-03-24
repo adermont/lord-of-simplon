@@ -4,13 +4,14 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="lord-of-simplon">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>fr.simplon.lordofsimplon.impl.jpa.PlayerDO</class>
         <class>fr.simplon.lordofsimplon.impl.jpa.HeroeDO</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/lordofsimplon"/>
-            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="root"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/lord-of-simplon"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="root"/>
         </properties>
     </persistence-unit>
 </persistence>

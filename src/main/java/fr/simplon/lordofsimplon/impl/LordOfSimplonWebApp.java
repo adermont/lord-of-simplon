@@ -43,7 +43,7 @@ public class LordOfSimplonWebApp
         server.addEndpoint(new Endpoint("/img/Shifumy.png", returnSameAsRequested));
 
         // Ici les endpoints pour les pages du jeu
-        server.addEndpoint(new Endpoint("/correction-fight.html", returnSameAsRequested));
+        server.addEndpoint(new Endpoint("/fight.html", returnSameAsRequested));
 
         int port = 8080;
         if (args.length > 0)

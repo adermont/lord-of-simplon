@@ -1,42 +1,93 @@
-html {
-    background-color: #161c2d;
+/* Import d'une police Google font api : */
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+
+/* Propriétés communes HTML et BODY */
+html, body {
+    /* Les propriétés suivantes permettent de dire que le contenu
+    doit prendre 100% de la page : */
+    margin: 0;
+    padding: 0;
+    overflow: auto;
     width: 100%;
     height: 100%;
     max-height: 100%;
-}
 
-body {
+    /* Le body doit avoir une couleur de fond pour pouvoir
+    mixer cette couleur avec l'image de fond : */
     background-color: #161c2d;
+
     background-size: 100%;
     color: #ffffff;
-    font-family: sans-serif;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Les pages index.html et fight.html n'ont pas le même background.
+   Cette classe permet de dissocier celui de la page index.html.
+*/
+body.index {
+    background-image: url('img/Paladin.png');
+    background-attachment: fixed;
+    background-blend-mode: color-dodge;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h1 {
     margin-top: 30px;
     text-align: center;
-    font-size: xxx-large;
+    font-size: 42pt;
+    font-family: 'Irish Grover'; /* google font */
+    color: #FFB800;
 }
 
 .heroe-header-line {
-    width: 600px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
     text-align: center;
 }
 
+.player-header {
+    display: inline-block;
+    width: 290px;
+    font-family: sans-serif;
+    font-size: 32pt;
+    color: #FFB800;
+}
+
+input[type="radio"] {
+
+    width: 30px;
+    height: 30px;
+
+    /* Solution simple mais moins compatible selon le navigateur */
+    /* accent-color: #C66767; */
+
+    /* Solution la plus compatible : */
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #FFF;
+    box-shadow: 0 0 0 1px white;
+
+    /*https://bryntum.com/blog/3-ways-to-style-radio-buttons-with-modern-css/*/
+}
+
+input[type="radio"]:checked {
+    background: #C66767;
+}
+
 .button {
     display: inline-block;
     color: white;
-    background-color: #73Cfe0;
+    background-color: #FFB800;
     border: none;
     border-radius: 5px;
     padding: 8px 50px;
     font-size: 16px;
+    font-weight: bold;
     transition-duration: 0.4s;
 }
 
@@ -48,15 +99,18 @@ h1 {
 /* -----------------------------------------------------------*/
 .heroe-selection-line {
     display: flex;
-    width: 600px;
-    margin: auto;
+    width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 .radio-player {
     display: flex;
     float: left;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
 }
 
 .heroe-card {
@@ -72,7 +126,7 @@ h1 {
 }
 
 .heroe-card-text {
-    margin: auto;
+    margin: 0 auto auto 0; /* top right bottom left */
 }
 
 .heroe-card-img {
@@ -102,7 +156,7 @@ h1 {
 }
 
 /* ------------------------------------------------------------------
-   correction-fight.html
+   fight.html
    ------------------------------------------------------------------
 */
 .three-columns-container {
@@ -151,7 +205,7 @@ h1 {
 }
 
 .current-player {
-    border: solid yellow 7px;
+    border: solid #FFB800 10px;
     box-sizing: border-box;
     background-color: white;
 }
@@ -174,7 +228,7 @@ h1 {
 
 .sortilege-inactif {
     color: white;
-    font-size: 8pt;
+    font-size: 10pt;
 }
 
 .score {
@@ -184,12 +238,196 @@ h1 {
     color: lightgrey;
 }
 
-/* ------------------------ */
+/* *****************************************************************************
+   Classes relatives à la zone du gagnant
+   *****************************************************************************
+*/
+.winner-area {
+    display: none;
+}
+
+.winner h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.winner {
+    text-align: center;
+    visibility: visible;
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        scale: 0;
+    }
+    50% {
+        scale: 150%;
+    }
+    75% {
+        scale: 80%;
+    }
+    to {
+        scale: 100%;
+    }
+}
+
+/* *****************************************************************************
+   Classes relatives aux zones de liste des coups reçus
+   *****************************************************************************
+*/
 #header-coups {
     font-size: 8pt;
     margin: 30px auto 5px;
 }
 
-#liste-coups {
-    height: 300px;
+#liste-coups-recus {
+    height: 200px;
+}
+
+#liste-coups-recus .card {
+    background-color: #736E6E;
+    overflow: hidden scroll;
+}
+
+.coup {
+    display: flex;
+    font-family: 'Calibri', sans-serif;
+    border-bottom: solid 1px black;
+}
+
+.coup h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Calibri', sans-serif;
+    font-size: x-large;
+    text-align: left;
+    color: black;
+}
+
+.hit-damages, .hit-regen {
+    float: right;
+    margin: auto 0 auto auto;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.hit-damages {
+    /*color: #C66767; DIFFERENT DE FIGMA CAR PAS ASSEZ VISIBLE */
+    color: firebrick;
+}
+
+.hit-regen {
+    color: #7F946A;
+}
+
+/* *****************************************************************************
+   Classes relatives aux zones contenant les boutons d'attaques/magie
+   *****************************************************************************
+*/
+
+.attaquant {
+    display: initial;
+}
+.non-attaquant {
+    visibility: hidden;
+}
+
+.header-attaques {
+    display: block;
+    margin-top: 30px;
+}
+
+.header-attaques h1 {
+    margin: 10px 0 0 0;
+    font-size: large;
+    text-align: left;
+}
+
+.header-attaques p {
+    margin-top: 0;
+    font-size: small;
+}
+
+.button-attaque {
+    display: inline-block;
+    color: black;
+    background-color: #FFB800;
+    border-radius: 8px;
+    border: solid #FFB800 1px;
+    padding: 5px;
+    font-size: small;
+}
+
+.button-attaque:hover {
+    box-sizing: border-box;
+    border: outset white 1px;
+    cursor: pointer;
+}
+
+.button-attaque:active {
+    background-color: #FFB844;
+    border: inset white 1px;
+    cursor: pointer;
+}
+
+.button-regen {
+    display: inline-block;
+    color: white;
+    background-color: #7F946A;
+    border-radius: 8px;
+    border: solid #7F946A 1px;
+    padding: 5px;
+    font-size: small;
+}
+
+.button-regen:hover {
+    box-sizing: border-box;
+    border: outset white 1px;
+    cursor: pointer;
+}
+
+.button-regen:active {
+    background-color: #87947a;
+    border: inset white 1px;
+    cursor: pointer;
+}
+
+.button-sortilege {
+    display: inline-block;
+    color: white;
+    background-color: #C66767;
+    border-radius: 8px;
+    border: solid #C66767 1px;
+    padding: 5px;
+    font-size: small;
+}
+
+.button-sortilege:hover {
+    box-sizing: border-box;
+    border: outset white 1px;
+    cursor: pointer;
+}
+
+.button-sortilege:active {
+    background-color: #b77b7b;
+    border: inset white 1px;
+    cursor: pointer;
+}
+
+.button-attaque h3, .button-regen h3, .button-sortilege h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.button-attaque p, .button-regen p, .button-sortilege p {
+    margin: 2px;
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+.footer {
+    margin-top: 50px;
 }

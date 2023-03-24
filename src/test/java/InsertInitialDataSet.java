@@ -15,7 +15,8 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * On insère un jeu de données par défaut dans la BDD.
+ * On insère un jeu de données par défaut dans la BDD. La base doit d'abord être créée dans PhpMyAdmin
+ * avec le nom "lord-of-simplon".
  */
 public class InsertInitialDataSet
 {
@@ -25,7 +26,7 @@ public class InsertInitialDataSet
         ILordOfSimplonGameLoader gameLoader = new LordOfSimplonDefaultGameLoader();
         LordOfSimplonGameModel game = new LordOfSimplonGameModel(gameLoader);
 
-        // Génération du schéma en BDD
+        // Propriétés de création du schéma (par défaut on le crée s'il n'existe pas) :
         // Cf. https://docs.oracle.com/javaee/7/tutorial/persistence-intro005.htm
         Properties p = new Properties();
         p.put("jakarta.persistence.schema-generation.database.action", /*none | create | drop | drop-and-create */"create");
@@ -34,7 +35,9 @@ public class InsertInitialDataSet
         //        p.put("jakarta.persistence.schema-generation.drop-source", /*metadata | script | metadata-then-script | script-then-metadata*/"script");
         //        p.put("jakarta.persistence.schema-generation.drop-script-source", "META-INF/sql/drop.sql");
         //        p.put("jakarta.persistence.sql-load-script-source", "META-INF/sql/data.sql");
-        Persistence.generateSchema("lordofsimplon", p);
+
+        // Génération du schéma en BDD (la BDD doit exister, créez-la dans PhpMyAdmin)
+        Persistence.generateSchema("lord-of-simplon", p);
 
         // Création de la factory permettant d'obtenir les EntityManagers JPA
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("lord-of-simplon", p);
