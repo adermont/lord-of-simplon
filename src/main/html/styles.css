@@ -85,7 +85,7 @@ h1 {
 /* -----------------------------------------------------------*/
 .heroe-selection-line {
   display: flex;
-  width: 400px;
+  width: 600px;
   margin: auto;
   flex-wrap: nowrap;
   color: #d9d9d9;
@@ -113,12 +113,14 @@ h1 {
 
 }
 
+  
+
 .radio-player {
   display: flex;
   float: left;
   width: 60px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .heroe-card {
