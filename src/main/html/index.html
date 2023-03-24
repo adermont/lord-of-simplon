@@ -1,52 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" >
+
+<!-- Ligne d'entête: Nous avons le Titre principal et le style de police que nous avons telechargé-->
+<head>
+    <meta charset="UTF-8">
     <title>Lord of Simplon</title>
-    <link rel="stylesheet" href="styles.css" >
-    <link rel="preconnect" href="https://fonts.googleapis.com" >
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-    <link
-      href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap"
-      rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <!--Pour avoir la foctionnalité qui permet de changer de page en cliquant sur le bouton démarrer-->
-    <script>
-      function redirectToFight() {
-        window.location.href = "fight.html";
-      }
-    </script>
-  </head>
-  <body class="indexBody">
-    <h1>Lord of Simplon</h1>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    
+<script>
+  function redirectToFight() {
+      window.location.href = "fight.html";
+  }
+</script>
+</head>
 
-    <!-- Ligne d'entête -->
+<body>
+         
+<H1>Lord of Simplon</H1>
 
-    <div class="heroe-header-line">
-      <div>
-        <p><b>Joueur 1 </b></p>
-      </div>
-      <div>
-        <button
-          id="demarrer"
-          class="button"
-          type="button"
-          onclick="redirectToFight()"
-        >
-          <b>Démarrer</b>
-        </button>
-      </div>
-      <div>
-        <p><b>Joueur 2 </b></p>
-      </div>
-    </div>
+<!-- Ligne d'entête: Nous avons ajouté un button=Demarrer et également les titres pour Joueur 1 et 2 -->
 
-    <!-- Ligne de sélection d'un héros : de part et d'autre de la card du héros on doit mettre des cases à cocher -->
-    <div class="heroe-selection-line">
-      <!-- TODO : Case à cocher -->
+   <div class="heroe-header-line">
+    <div> <p><b>Joueur 1 </b></p></div>
+    <div> <button id="demarrer" class="button" type="button" onclick="redirectToFight()">Démarrer</button> </div>  
+    <div> <p><b>Joueur 2 </b></p></div>
+</div>
 
-      <input type="radio" name="left" style="margin-right: 50px;">
-      <div class="heroe-card">
+
+<!-- Ligne de sélection d'un héros : Nous avons fait une card pour chaque héros, 
+    également nous avons les radios buttons, les textes et les images -->
+
+<!-- Ligne de sélection du héros n°1 -->
+<div class="heroe-selection-line">
+       <input type="radio" name="left" checked>  
+    <div class="heroe-card">
+
         <div class="heroe-card-img">
           <img src="img/Paladin.png" alt="Log du paladin" >
         </div>
@@ -61,12 +53,15 @@
       <input type="radio" name="right" style="margin-left: 50px;" >
     </div>
 
-    <!-- TODO : Case à cocher -->
+    <input type="radio" name="right" checked>
+</div>
+    
 
-    <!-- Ligne de sélection du héros n°2 -->
-    <div class="heroe-selection-line">
-      <input type="radio" name="left" style="margin-right: 50px;" >
-      <div class="heroe-card">
+<!-- Ligne de sélection du héros n°2 -->
+<div class="heroe-selection-line">
+    <input type="radio" name="left">
+    <div class="heroe-card">
+
         <div class="heroe-card-img">
           <img src="img/Shifumy.png" alt="Log du Shifumy" >
         </div>
