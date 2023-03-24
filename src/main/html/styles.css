@@ -26,7 +26,6 @@ html {
 
 .fightBody {
   background-color: #161c2d;
-
   background-size: 100%;
   color: #ffffff;
   font-family: sans-serif;
@@ -263,4 +262,8 @@ h1 {
 
 #liste-coups {
   height: 300px;
+}
+.VS{
+  font-size: 72px;
+  color: #ffb800;
 }
