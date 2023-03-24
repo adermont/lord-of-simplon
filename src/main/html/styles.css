@@ -1,5 +1,5 @@
-/* Dans ce partie: Nous avons ajouter overflow pour scroller la page principal et 
-nous avons intialisé a 0 margin/padding pour enlever les marges en haut et bas*/
+/* Dans ce partie: Nous avons ajouté overflow pour scroller la page principale et 
+nous avons initialisé a 0 margin/padding pour enlever les marges en haut et bas*/
 html,body{
     overflow: scroll;
     margin: 0;
@@ -14,8 +14,8 @@ html {
   max-height: 100%;
 }
 
-/* Dans ce partie du code-body: Nous avons ajouter l'image et pour ajouter l'effet 
-demandé nous avons ajouter de color donné et bleand-mode*/
+/* Dans cette partie du code-body: Nous avons ajouté l'image et pour ajouter l'effet 
+demandé nous avons ajouté la couleur donnée et le bleand-mode*/
 body {
   background-color: #161c2d;
   background-image: url(img/Paladin.png);
@@ -28,7 +28,8 @@ body {
   max-height: 100%;
 }
 
-/* Dans ce partie du code-h1: Nous prenons on compte le marge de l'entête, le style et la couleur du Titre */
+/* Dans cette partie du code-h1: Nous prenons en compte la marge de l'entête, 
+le style et la couleur du Titre */
 h1 {
   margin-top: 15px;
   text-align: center;
@@ -38,7 +39,8 @@ h1 {
   color: #ffb800;
 }
 
-/* Dans ce partie du code-heroe-header-line (Barre de menu) nous avons les alignements, la taille et couleur du text */
+/* Dans cette partie du code-heroe-header-line (Barre de menu) nous avons les alignements, 
+la taille et la ouleur du text */
 .heroe-header-line {
   width: 600px;
   margin-left: auto;
@@ -71,7 +73,7 @@ h1 {
   color: black;
 }
 
-/* Dans ce partie du heroe-selection-line: Nous sommes dans le card-heroe nro 1,2 et 3*/
+/* Dans cette partie du heroe-selection-line: Nous sommes dans les card-heroe n° 1,2 et 3*/
 .heroe-selection-line {
   display: flex;
   width: 400px;
@@ -82,6 +84,8 @@ h1 {
  
 }
 
+/* Dans cette partie du heroe-selection-line input: Nous avons les radios buttons avec 
+les caracteristiques demandées*/
 .heroe-selection-line input {
   accent-color: #C66767;
   width: 25px;
