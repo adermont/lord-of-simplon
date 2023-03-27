@@ -8,6 +8,18 @@
 
     <script rel="script">
 
+        let sortilegePlayer1 = {
+            nom: null,
+            nbPointsDommages: 0,
+            nbToursRestants: 0
+        };
+
+        let sortilegePlayer2 = {
+            nom: null,
+            nbPointsDommages: 0,
+            nbToursRestants: 0
+        };
+
     /**
      * Fonction qui lance une magie de régénération : augmentation du score du joueur
      * et ajout d'un nouveau coup reçu dans la liste des coups du joueur.
@@ -16,7 +28,7 @@
      * @param nameRegen Nom de l'attaque.
      * @param nbPoints Nombre de point en moins.
      */
-    function regeneratePlayer(numPlayer, nameRegen, nbPoints){
+    function regeneratePlayer(numPlayer, nameRegen, nbPoints) {
 
         // On récupère les éléments du DOM avec lesquels on va travailler
         let divScorePlayer = document.getElementById('score-player' + numPlayer);
@@ -94,13 +106,79 @@
         }
     }
 
+    /**
+     * Applique les sortilèges en cours.
+     */
+    function applySortileges(){
+        // S'il existe des sortileges en cours, on retire les points de dommages
+        // de ces sortilèges aux scores des joueurs sur lesquels ils s'appliquent.
+
+        // Boucle sur les 2 joueurs
+        for (numPlayer = 1; numPlayer <= 2; numPlayer++) {
+
+            let divScore = document.getElementById('score-player' + numPlayer);
+            let divCoupsRecus = document.getElementById('liste-coups-recus-player' + numPlayer);
+            let txtScore = divScore.innerText;
+            let iScore = parseInt(txtScore);
+
+            // On récupère le sortilège applicable au joueur courant
+            let jsonSortilege = eval('sortilegePlayer' + numPlayer);
+
+            // On regarde si le sortilège est applicable. Pour qu'un sortilège soit applicable
+            // il faut que le nombre de tours restants soit supérieur à zéro.
+            if (jsonSortilege.nbToursRestants > 0) {
+
+                // Modification du score du joueur impacté par le sortilège
+                let newScore = iScore - jsonSortilege.nbPointsDommages;
+                if (newScore < 0) {
+                    newScore = 0;
+                }
+                divScore.innerText = newScore.toString();
+
+                // Ajout d'une occurrence du sortilège dans la liste des coups reçus
+                divCoupsRecus.innerHTML += `<div class="coup"><div><p>Sortilège</p><h1>${jsonSortilege.nom}</h1></div><span class="hit-damages">-${jsonSortilege.nbPointsDommages} pts</span></div>`;
+                divCoupsRecus.scroll({top: 1000, behavior: "smooth"});
+
+                // Un tour en moins
+                jsonSortilege.nbToursRestants--;
+
+                // Fin du combat ?
+                if (newScore == 0) {
+                    finDuCombat();
+                }
+            }
+        }
+    }
+
+    /**
+     * Affecte un sortilège à l'adversaire du joueur courant pour les 3 prochains tours.
+     *
+     * @param numPlayerAttaquant Joueur courant qui lance le sortilège.
+     * @param nameSortilege Nom du sortilège.
+     * @param nbPoints Nombre de points de dommages du sortilège.
+     */
+    function sortilege(numPlayerAttaquant, nameSortilege, nbPoints){
+
+        console.info(`Lancement du sortilège ${nameSortilege} par le joueur ${numPlayerAttaquant}`);
+
+        let numPlayerAttacked = 1+(numPlayerAttaquant%2);
+
+        let sortilege = eval('sortilegePlayer' + numPlayerAttacked);
+        sortilege.nom = nameSortilege;
+        sortilege.nbPointsDommages = nbPoints;
+        sortilege.nbToursRestants = 3;
+
+        tourSuivant(numPlayerAttaquant);
+    }
+
+    /**
+     * Passe au tour suivant, changement de joueur attaquant.
+     * @param numPlayer Numéro du joueur courant.
+     */
     function tourSuivant(numPlayer){
 
         let numPlayerCourant = numPlayer;
         let numPlayerSuivant = 1+(numPlayer%2);
-
-        console.info('Joueur courant = '+numPlayerCourant);
-        console.info('Joueur suivant = '+numPlayerSuivant);
 
         let divToHide = document.getElementById('attaques-player' + numPlayerCourant);
         let divToShow = document.getElementById('attaques-player' + numPlayerSuivant);
@@ -110,12 +188,32 @@
 
         divToShow.classList.remove('non-attaquant');
         divToShow.classList.add('attaquant');
+
+        applySortileges();
     }
 
+    /**
+     * Siffle la fin du combat.
+     */
     function finDuCombat(){
+
         document.getElementById('winner').className = 'winner';
         document.getElementById('attaques').style.display = 'none';
-        document.getElementById('score-player2').innerText = '0';
+
+        let divScore1 = document.getElementById('score-player1');
+        let iScore1 = parseInt(divScore1.innerText);
+        let divScore2 = document.getElementById('score-player2');
+        let iScore2 = parseInt(divScore2.innerText);
+
+        if ( iScore1 == iScore2 ) {
+            document.getElementById('winner-name').innerText = 'Egalité !';
+        }
+        else if ( iScore1 == 0){
+            document.getElementById('winner-name').innerText = 'Joueur 2 a gagné !';
+        }
+        else {
+            document.getElementById('winner-name').innerText = 'Joueur 1 a gagné !';
+        }
     }
     </script>
 </head>
@@ -161,7 +259,7 @@
 <!--                                        GAGNANT                                         -->
 <!-- ***************************************************************************************-->
 <div id="winner" class="winner-area">
-    <h1>Joueur 1 a gagné !</h1>
+    <h1 id="winner-name">Joueur 1</h1>
     <button class="button" onclick="window.location.href='index.html'">Nouveau combat</button>
 </div>
 <!-- ***************************************************************************************-->
@@ -178,26 +276,11 @@
 -->
 <div id="liste-coups-recus" class="three-columns-container">
     <!-- Coups reçus par le joueur 1 -->
-    <div id="liste-coups-recus-player1" class="column card">
-        <!--
-        <div class="coup"><div><p>Attaque</p><h1>Coin de table</h1></div><span class="hit-damages">-8 pts</span></div>
-        <div class="coup"><div><p>Attaque</p><h1>Clous rouillés</h1></div><span class="hit-damages">-6 pts</span></div>
-        <div class="coup"><div><p>Attaque</p><h1>Eau bouillante</h1></div><span class="hit-damages">-7 pts</span></div>
-        <div class="coup"><div><p>Attaque</p><h1>Coin de table</h1></div><span class="hit-damages">-8 pts</span></div>
-        -->
-    </div>
-
+    <div id="liste-coups-recus-player1" class="column card"></div>
+    <!-- Colonne centrale -->
     <div class="center-column"></div>
-
     <!-- Coups reçus par le joueur 2 -->
-    <div id="liste-coups-recus-player2" class="column card">
-        <!--
-        <div class="coup"><div><p>Attaque</p><h1>Epée capricieuse</h1></div><span class="hit-damages">-12 pts</span></div>
-        <div class="coup"><div><p>Attaque</p><h1>Fontaine de jouvence</h1></div><span class="hit-regen">+15 pts</span></div>
-        <div class="coup"><div><p>Attaque</p><h1>Croche-pied</h1></div><span class="hit-damages">-10 pts</span></div>
-        <div class="coup"><div><p>Attaque</p><h1>Epée capricieuse</h1></div><span class="hit-damages">-12 pts</span></div>
-        -->
-    </div>
+    <div id="liste-coups-recus-player2" class="column card"></div>
 </div>
 
 <!-- ******************************************************************************
@@ -229,7 +312,7 @@
             <h3>Picon-bière</h3>
             <p>+5 pts</p>
         </div>
-        <div class="button-sortilege">
+        <div class="button-sortilege" onclick="sortilege(1, 'Déshydratation', 3)">
             <h3>Déshydratation</h3>
             <p>-3 pts</p>
         </div>
@@ -260,7 +343,7 @@
             <h3>Fontaine de jouvence</h3>
             <p>+15 pts</p>
         </div>
-        <div class="button-sortilege">
+        <div class="button-sortilege" onclick="sortilege(2, 'Mal de mer', 5)">
             <h3>Mal de mer</h3>
             <p>-5 pts</p>
         </div>
