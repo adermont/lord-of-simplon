@@ -195,9 +195,15 @@ function tourSuivant(numPlayer){
 
     divToHide.classList.remove('attaquant');
     divToHide.classList.add('non-attaquant');
-
     divToShow.classList.remove('non-attaquant');
     divToShow.classList.add('attaquant');
+    // Mise en surbrillance de la carte du joueur suivant
+
+    const cardPlayerCourant = document.getElementById('card-player'+numPlayerCourant);
+    const cardPlayerSuivant = document.getElementById('card-player'+numPlayerSuivant);
+
+    cardPlayerCourant.classList.remove('current-player');
+    cardPlayerSuivant.classList.add('current-player');
 
     applySortileges();
 }

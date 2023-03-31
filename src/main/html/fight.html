@@ -11,7 +11,11 @@
 <H1>Lord of Simplon</H1>
 
 <div id="players-area" class="three-columns-container">
-    <div class="column card current-player">
+
+    <!-- Le div du joueur courant a une classe CSS "current-player" en plus par rapport
+    au div du joueur qui défend.
+    -->
+    <div id="card-player1" class="column card current-player">
         <img src="img/Paladin.png" alt="Paladin">
         <div class="card-text">
             <h2>Joueur 1</h2>
@@ -22,7 +26,7 @@
     <div class="center-column versus-text">
         <h2>vs</h2>
     </div>
-    <div class="column card">
+    <div id="card-player2" class="column card">
         <img src="img/Shifumy.png" alt="Shifumy">
         <div class="card-text">
             <h2>Joueur 2</h2>
