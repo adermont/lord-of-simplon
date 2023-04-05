@@ -10,15 +10,25 @@ let sortilegePlayer2 = {
     nbToursRestants: 0
 };
 
+
+function debutCombat(){
+    if ( typeof chrono === 'undefined' || chrono === null) {
+        startChrono();
+    }
+}
+
 /**
  * Fonction qui lance une magie de régénération : augmentation du score du joueur
  * et ajout d'un nouveau coup reçu dans la liste des coups du joueur.
  *
- * @param numPlayer Numéro du joueur attaqué.
+ * @param numPlayer Numéro du joueur qui lance la magie.
  * @param nameRegen Nom de l'attaque.
  * @param nbPoints Nombre de point en moins.
  */
 function regeneratePlayer(numPlayer, nameRegen, nbPoints) {
+    console.info(`Lancement de la regeneration ${nameRegen} par le joueur ${numPlayer}`);
+
+    debutCombat(); // hook de début de combat
 
     // On récupère les éléments du DOM avec lesquels on va travailler
     let divScorePlayer = document.getElementById('score-player' + numPlayer);
@@ -60,6 +70,9 @@ function regeneratePlayer(numPlayer, nameRegen, nbPoints) {
  * @param nbPoints Nombre de point en moins.
  */
 function attaquePlayer(numPlayerAttaquant, nameAttack, nbPoints) {
+    console.info(`Lancement de l'attaque ${nameAttack} par le joueur ${numPlayerAttaquant}`);
+
+    debutCombat(); // hook de début de combat
 
     let numPlayer = 1+(numPlayerAttaquant%2);
 
@@ -106,6 +119,8 @@ function attaquePlayer(numPlayerAttaquant, nameAttack, nbPoints) {
 function sortilege(numPlayerAttaquant, nameSortilege, nbPoints){
 
     console.info(`Lancement du sortilège ${nameSortilege} par le joueur ${numPlayerAttaquant}`);
+
+    debutCombat(); // hook de début de combat
 
     let numPlayerAttacked = 1+(numPlayerAttaquant%2);
 
@@ -162,6 +177,9 @@ function applySortileges(){
     displaySortileges();
 }
 
+/**
+ * Affiche les sortilèges auxquels sont soumis les joueurs, juste en ddessous de leur carte.
+ */
 function displaySortileges(){
 
     for (numPlayer = 1; numPlayer <= 2; numPlayer++) {
@@ -197,8 +215,8 @@ function tourSuivant(numPlayer){
     divToHide.classList.add('non-attaquant');
     divToShow.classList.remove('non-attaquant');
     divToShow.classList.add('attaquant');
-    // Mise en surbrillance de la carte du joueur suivant
 
+    // Mise en surbrillance de la carte du joueur suivant
     const cardPlayerCourant = document.getElementById('card-player'+numPlayerCourant);
     const cardPlayerSuivant = document.getElementById('card-player'+numPlayerSuivant);
 
@@ -212,6 +230,8 @@ function tourSuivant(numPlayer){
  * Siffle la fin du combat.
  */
 function finDuCombat(){
+
+    stopChrono();
 
     document.getElementById('winner').className = 'winner';
     document.getElementById('attaques').style.display = 'none';
